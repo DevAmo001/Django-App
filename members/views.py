@@ -1,7 +1,14 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from .models import Members
 
 def members(request):
-  template = loader.get_template('myFirst.html')
-  return HttpResponse(template.render())
+  # fetching data from the database
+  mymembers = Members.objects.all().values()
+  # loads the template
+  template = loader.get_template('all_members.html')
+  # pass data
+  context = {
+    'mymembers': mymembers,
+  }
+  return HttpResponse(template.render(context, request))
