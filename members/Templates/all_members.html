@@ -10,7 +10,9 @@
 
   <ul>
     {% for x in mymembers %}
-    <li>{{x.firstname}} {{x.lastname}} {{x.phone}} {{x.joined_date}}</li>
+    <li>
+      <a href="details/{{x.id}}">{{x.firstname}} {{x.lastname}}</a>
+      </li>
     {% endfor %}
   </ul>
   
