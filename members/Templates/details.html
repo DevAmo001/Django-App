@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>specific information about a member</title>
-</head>
-<body>
+{% extends "master.html" %}
+
+{% block title %}
+  Details  about {{mymembers.firstname}} {{mymembers.lastname}}
+{% endblock %}
+
+{% block content %}
   <h1>
     {{mymembers.firstname}} {{mymembers.lastname}}
   </h1>
@@ -21,5 +20,4 @@
     Back to <a href="/">Members</a>
   </p>
   
-</body>
-</html>
+{% endblock %}
