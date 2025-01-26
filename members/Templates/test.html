@@ -1,0 +1,15 @@
+{% extends 'master.html' %}
+
+{% block title %}
+  Testing template
+{% endblock %}
+
+{% block content %}
+  <h1>
+    Hello {{firstname}} {{lastname}}
+  </h1>
+
+  <p>
+    Back to <a href="{% url 'main' %}">Main</a>
+  </p>
+{% endblock %}
