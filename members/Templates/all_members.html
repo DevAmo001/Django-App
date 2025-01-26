@@ -6,9 +6,10 @@
 
 {% block content %}
   <h1>Members</h1>
+  <h3>Today's date :{% now 'Y-M-d' %}</h3>
 
   <ul>
-    {% for x in mymembers %}
+    {% for x in mymembers reversed %}
     <li>
       <a href="details/{{x.id}}">{{x.firstname}} {{x.lastname}}</a>
       </li>
