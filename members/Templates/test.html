@@ -6,8 +6,30 @@
 
 {% block content %}
   <h1>
-    Hello {{firstname}} {{lastname}}
+    Queryset Table
   </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone number</th>
+        <th>Joined date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for member in mydata %}
+      <tr>
+        <td>{{member.id}}</td>
+        <td>{{member.firstname}}</td>
+        <td>{{member.lastname}}</td>
+        <td>{{member.Phone}}</td>
+        <td>{{member.joined_date}}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+  </table>
 
   <p>
     Back to <a href="{% url 'main' %}">Main</a>
