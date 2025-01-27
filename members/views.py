@@ -29,7 +29,8 @@ def main(request):
 def testing(request):
   template = loader.get_template('test.html')
   # mydata = Members.objects.all().values()
-  mydata = Members.objects.filter(firstname__startswith = 'A' )
+  # mydata = Members.objects.filter(firstname__startswith = 'A' )
+  mydata = Members.objects.all().order_by('firstname').values() # descending order
   context = {
     'mydata': mydata,
   }
