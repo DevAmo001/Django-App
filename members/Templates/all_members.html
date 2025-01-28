@@ -1,10 +1,14 @@
 {% extends "master.html" %}
 
+{% load static %}
+
 {% block title %}
   My Tennis club - List of all Members
 {% endblock %}
 
 {% block content %}
+  <link rel="stylesheet" href="{% static 'all-members.css' %}">
+
   <h1>Members</h1>
   <h3>Today's date :{% now 'Y-M-d' %}</h3>
 
