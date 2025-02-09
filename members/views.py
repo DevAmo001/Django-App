@@ -36,3 +36,7 @@ def testing(request):
   }
 
   return HttpResponse(template.render(context, request))
+
+def products_new(request):
+  template = loader.get_template('new.html')
+  return HttpResponse(template.render())
